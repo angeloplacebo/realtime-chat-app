@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 90%;
+  height: 90vh;
+  background: #cecdca;
+  border-radius: 0.5rem;
+}
+
+#message-container {
+  max-width: 1200px;
+  height: 86%;
+  overflow-y: auto;
+  margin:0.5rem 0.5rem 0 0.5rem;
+}
+
+#message-container div.received:first-child {
+  opacity: 0.8;
+  background: transparent;
+}
+#message-container div.received:first-child::before {
+  visibility: hidden;
+}
+
+#message-container div.received {
+  position: relative;
+  background: #fff;
+  padding: 0.7rem;
+  margin: 0.5rem;
+  margin-left: 0.8rem;
+
+  max-width: 50%;
+  overflow-wrap: break-word;
+
+  border-radius: 0.25rem;
+  min-height: 1rem;
+}
+
+#message-container div.received::before {
+  content: "";
+  background: #fff;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  transform: rotate(45deg) translateY(50%);
+}
+
+#message-container div.sended::after {
+  content: "";
+  background: #fff;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  top: 20%;
+  right: -2%;
+  transform: rotate(45deg) translateY(50%);
+}
+
+#message-container div.sended {
+  position: relative;
+  background: #fff;
+  padding: 0.7rem;
+  margin: 0.5rem;
+
+  margin-left: auto;
+  margin-right: 0.8rem;
+
+  max-width: 50%;
+  overflow-wrap: break-word;
+
+  border-radius: 0.25rem;
+  min-height: 1rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  height: 2rem;
+
+  border-radius: 0.5rem;
+  /* margin: 0 0.5rem; */
+  
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+}
+
+form input {
+  outline: none;
+  border-radius: 2rem;
+  border: none;
+  padding-left: 1rem;
+  flex: 1;
+  margin-left: 0.5rem;
+
+}
+
+form button {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  margin: 1rem;
+}
+
+form button img{
+  height: 1.5rem;
+  filter: invert(1);
+  transition: 0.2s;
+}
+
+form button:hover img{
+  filter: invert(0);
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1rem;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
