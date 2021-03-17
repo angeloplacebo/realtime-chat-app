@@ -44,11 +44,11 @@ main {
 
 }
 
-#message-container div.received:first-child {
+#message-container div.received.note {
   opacity: 0.8;
   background: transparent;
 }
-#message-container div.received:first-child::before {
+#message-container div.received.note::before {
   visibility: hidden;
 }
 
@@ -101,7 +101,7 @@ main {
   margin: 0.5rem;
 
   margin-left: auto;
-  margin-right: 1.2rem;
+  margin-right: 0.8rem;
 
   max-width: 50%;
   width:fit-content;

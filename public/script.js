@@ -5,19 +5,26 @@ const messageInput = document.getElementById('message-input')
 
 
 const name = prompt('What is your name?')
-appendMessage('You Joined')
+// appendNotes('You Joined')
 socket.emit('new-user', name)
 
+socket.on('previous-messages', messages =>{
+  for(message of messages){
+    appendMessage(message)
+  }
+  appendNotes('You Joined')
+})
+
 socket.on('chat-message',data =>{
-  appendMessage(`${data.name}: ${data.message}`)
+  appendMessage(data)
 })
 
 socket.on('user-connected',name =>{
-  appendMessage(`${name} connected`)
+  appendNotes(`${name} connected`)
 })
 
 socket.on('user-disconnected',name =>{
-  appendMessage(`${name} disconnected`)
+  appendNotes(`${name} disconnected`)
 })
 
 messageForm.addEventListener('submit', e =>{
@@ -31,10 +38,19 @@ messageForm.addEventListener('submit', e =>{
 })
 
 
-function appendMessage(message) {
+function appendNotes(note) {
+  const messageElement = document.createElement('div')
+  messageElement.classList.add('received','note')
+  messageElement.innerText = note
+  messageContainer.append(messageElement)
+  messageContainer.scrollTop = messageContainer.scrollHeight
+}
+
+function appendMessage(data) {
+  let { author, message } = data
   const messageElement = document.createElement('div')
   messageElement.classList.add('received')
-  messageElement.innerText = message
+  messageElement.innerHTML = `<strong>${author}:</strong> ${message}`
   messageContainer.append(messageElement)
   messageContainer.scrollTop = messageContainer.scrollHeight
 }
