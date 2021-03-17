@@ -36,7 +36,7 @@ main {
   max-width: 1200px;
   height: 86%;
   overflow-y: auto;
-  margin:0.5rem 0.5rem 0 0.5rem;
+  margin: 0.5rem 0.5rem 0 0.5rem;
 }
 
 #message-container div.received:first-child {
@@ -55,6 +55,7 @@ main {
   margin-left: 0.8rem;
 
   max-width: 50%;
+  width: fit-content;
   overflow-wrap: break-word;
 
   border-radius: 0.25rem;
@@ -63,24 +64,28 @@ main {
 
 #message-container div.received::before {
   content: "";
-  background: #fff;
-  height: 14px;
-  width: 14px;
+  width: 0px;
+  height: 0px;
   position: absolute;
-  top: 20%;
-  left: 0%;
-  transform: rotate(45deg) translateY(50%);
+  border-right: 10px solid #ffffff;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  left: -13px;
+  top: 6px;
 }
 
 #message-container div.sended::after {
   content: "";
-  background: #fff;
-  height: 14px;
-  width: 14px;
+  width: 0px;
+  height: 0px;
   position: absolute;
-  top: 20%;
-  right: -2%;
-  transform: rotate(45deg) translateY(50%);
+  border-left: 10px solid #ffffff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  right: -13px;
+  top: 6px;
 }
 
 #message-container div.sended {
@@ -93,6 +98,7 @@ main {
   margin-right: 0.8rem;
 
   max-width: 50%;
+  width:fit-content;
   overflow-wrap: break-word;
 
   border-radius: 0.25rem;
@@ -105,8 +111,7 @@ form {
   height: 2rem;
 
   border-radius: 0.5rem;
-  /* margin: 0 0.5rem; */
-  
+
   position: absolute;
   bottom: 2%;
   width: 100%;
@@ -117,13 +122,13 @@ form input {
   border-radius: 2rem;
   border: none;
   padding-left: 1rem;
+  padding-right: 1rem;
   flex: 1;
   margin-left: 0.5rem;
-
 }
 
 form button {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   outline: none;
@@ -131,16 +136,15 @@ form button {
   margin: 1rem;
 }
 
-form button img{
+form button img {
   height: 1.5rem;
   filter: invert(1);
   transition: 0.2s;
 }
 
-form button:hover img{
+form button:hover img {
   filter: invert(0);
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -152,14 +156,14 @@ form button:hover img{
   background: #f1f1f1;
   border-radius: 1rem;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   border-radius: 1rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
